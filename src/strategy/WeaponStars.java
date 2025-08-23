@@ -14,7 +14,7 @@ public class WeaponStars extends WeaponBehavior {
 
     Resources.clear();
 
-    System.out.println("Throwing Stars");
+    System.out.println("Beaming Stars");
 
     for (int i = 0; i < NUMBER_OF_COLUMNS; i++) {
       System.out.print("*");

@@ -15,13 +15,7 @@ public class WeaponKnife extends WeaponBehavior {
     for (int i = 0; i < NUMBER_OF_COLUMNS; i++) {
       Resources.clear();
 
-      System.out.println("Throwing Knife");
-
-      for (int j = 0; j < i; j++) {
-        System.out.print(" ");
-      }
-
-      System.out.println("-|=>");
+      System.out.println("Throwing Knife\n" + " ".repeat(i) + "-|=>");
 
       Resources.sleep(SECOND_IN_MILLISECOND / this.speed);
     }
