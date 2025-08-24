@@ -12,12 +12,16 @@ public class WeaponKnife extends WeaponBehavior {
     final int NUMBER_OF_COLUMNS = 80;
     final int SECOND_IN_MILLISECOND = 100;
 
-    for (int i = 0; i < NUMBER_OF_COLUMNS; i++) {
-      Resources.clear();
+    Resources.clear();
 
-      System.out.println("Throwing Knife\n" + " ".repeat(i) + "-|=>");
+    System.out.println("Throwing Knife");
+
+    for (int i = 0; i < NUMBER_OF_COLUMNS; i++) {
+      System.out.print("\r" + " ".repeat(i) + "-|=>");
 
       Resources.sleep(SECOND_IN_MILLISECOND / this.speed);
     }
+
+    System.out.println();
   }
 }

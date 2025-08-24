@@ -20,11 +20,11 @@ public class WeaponBow extends WeaponBehavior {
     Resources.sleep(SECOND_IN_MILLISECOND * 5);
 
     for (int i = 0; i < NUMBER_OF_COLUMNS; i++) {
-      Resources.clear();
-
-      System.out.println("Shooting an arrow\n|)" + " ".repeat(i) + "->");
+      System.out.print("\r|)" + " ".repeat(i) + "->");
 
       Resources.sleep(SECOND_IN_MILLISECOND / this.speed);
     }
+
+    System.out.println();
   }
 }
