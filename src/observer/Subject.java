@@ -20,4 +20,21 @@ public abstract class Subject {
   public abstract void issueNotice(int note);
 
   public abstract void notifyObservers(int note);
+
+  protected void playTrumpets(String message, boolean warning, int note) {
+    if (note == 1) {
+      message += " Once";
+    } else if (note == 2) {
+      message += " Twice";
+    }
+
+    if (warning) {
+      message += "!";
+    } else {
+      message += ".";
+    }
+
+    System.out.println(message);
+    Trumpet.play(warning, note);
+  }
 }

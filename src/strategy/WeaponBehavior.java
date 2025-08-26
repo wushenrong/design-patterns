@@ -9,8 +9,8 @@ public abstract class WeaponBehavior {
   /** The speed of the weapon, in columns per second. */
   protected int speed = 2;
 
-  protected final int NUMBER_OF_COLUMNS = 80;
-  protected final int SECOND_IN_MILLISECONDS = 100;
+  protected static final int NUMBER_OF_COLUMNS = 80;
+  protected static final int SECOND_IN_MILLISECONDS = 100;
 
   /** The weapon's method of attack. */
   public abstract void attack();
