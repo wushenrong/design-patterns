@@ -9,22 +9,13 @@ public class WeaponBow extends WeaponBehavior {
   /** Bow's attack by shooting an arrow. */
   @Override
   public void attack() {
-    final int NUMBER_OF_COLUMNS = 80;
-    final int SECOND_IN_MILLISECOND = 100;
-
     Resources.clear();
 
     System.out.println("Shooting an arrow");
     System.out.print("<)");
 
-    Resources.sleep(SECOND_IN_MILLISECOND * 5);
+    Resources.sleep(SECOND_IN_MILLISECONDS * 5);
 
-    for (int i = 0; i < NUMBER_OF_COLUMNS; i++) {
-      System.out.print("\r|)" + " ".repeat(i) + "->");
-
-      Resources.sleep(SECOND_IN_MILLISECOND / this.speed);
-    }
-
-    System.out.println();
+    printAttack("|)", "->", " ");
   }
 }
