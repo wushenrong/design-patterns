@@ -39,9 +39,9 @@ public class TownDriver {
   public int getNotice() {
     while (true) {
       System.out.println("Tell us what the Guards see:");
-      System.out.println("1. A messenger is comming.");
+      System.out.println("1. A messenger is coming.");
       System.out.println("2. Royalty is approaching.");
-      System.out.println("3. An army is approacing.");
+      System.out.println("3. An army is approaching.");
       System.out.println("4. Our city has been breached");
 
       int number = Integer.parseInt(reader.nextLine());
