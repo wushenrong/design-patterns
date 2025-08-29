@@ -14,7 +14,7 @@ public class Trumpet {
   }
 
   private static void honk(boolean warning) {
-    String fileName = "observer/sounds/";
+    String fileName = "bin/observer/sounds/";
 
     if (warning) {
       fileName += "trumpet.wav";
