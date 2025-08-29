@@ -15,5 +15,19 @@ public class ShopOwner implements Observer {
   @Override
   public void update(boolean warning, int note) {
     System.out.print("ShopOwner: ");
+
+    if (warning) {
+      if (note == 1) {
+        System.out.println("Hiding all the produce!");
+      } else if (note == 2) {
+        System.out.println("Running away from the shop!");
+      }
+    } else {
+      if (note == 1) {
+        System.out.println("Continue to sell produce.");
+      } else if (note == 2) {
+        System.out.println("Greeting the Royal family.");
+      }
+    }
   }
 }
