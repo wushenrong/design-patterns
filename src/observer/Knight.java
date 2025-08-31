@@ -1,6 +1,17 @@
 package observer;
 
+/**
+ * A medieval Knight that is protecting the town.
+ *
+ * @author Samuel Wu
+ */
 public class Knight implements Observer {
+  /**
+   * Creates a Knight and register itself to get notices from a Watchman and Greeter.
+   *
+   * @param watchman The watchman to get warnings from.
+   * @param greeter The greeter to get notices from.
+   */
   public Knight(Subject watchman, Subject greeter) {
     watchman.registerObserver(this);
     greeter.registerObserver(this);

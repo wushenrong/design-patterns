@@ -1,11 +1,16 @@
 package observer;
 
+/**
+ * A medieval ShopOwner that is selling produce.
+ *
+ * @author Samuel Wu
+ */
 public class ShopOwner implements Observer {
   /**
-   * Creates a ShopOwner Observer and register itself to a watchman and greeter.
+   * Creates a ShopOwner and register itself to get notices from a Watchman and Greeter.
    *
-   * @param watchman
-   * @param greeter
+   * @param watchman The watchman to get warnings from.
+   * @param greeter The greeter to get notices from.
    */
   public ShopOwner(Subject watchman, Subject greeter) {
     watchman.registerObserver(this);
