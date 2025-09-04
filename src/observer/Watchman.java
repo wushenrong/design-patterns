@@ -17,6 +17,5 @@ public class Watchman extends Subject {
   @Override
   public void issueNotice(int note) {
     playTrumpets("Horns are sounding!!!", true, note);
-    notifyObservers(note);
   }
 }

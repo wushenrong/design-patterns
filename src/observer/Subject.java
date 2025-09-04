@@ -68,6 +68,9 @@ public abstract class Subject {
     }
 
     System.out.println(message);
+
     Trumpet.play(warning, note);
+
+    notifyObservers(note);
   }
 }
