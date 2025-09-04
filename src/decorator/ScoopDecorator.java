@@ -17,14 +17,11 @@ public abstract class ScoopDecorator extends IceCream {
     this.asciiArt.add(flavor);
 
     for (int i = numFlavorScoops; i > 0; i--) {
+      int currentScoop = numScoops - numFlavorScoops + i;
       String scoop = "(";
 
-      System.out.println(numScoops - numFlavorScoops + i);
-
-      scoop = " ".repeat(numScoops - numFlavorScoops + i) + scoop;
-
-      scoop += "-".repeat(0);
-
+      scoop = " ".repeat(currentScoop - 1) + scoop;
+      scoop += "-".repeat((6 - currentScoop) * 2);
       scoop += ")";
 
       this.asciiArt.add(scoop);

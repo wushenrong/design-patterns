@@ -6,5 +6,6 @@
   "java.project.referencedLibraries": [
     "lib/**/*.jar"
   ],
-  "terminal.integrated.stickyScroll.enabled": false
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.fontLigatures.enabled": false
 }
