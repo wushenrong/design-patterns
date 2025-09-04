@@ -17,7 +17,10 @@ public abstract class IceCream {
 
     for (String line : asciiArt) {
       art += line;
-      art += "\n";
+
+      if (!line.contains("\u001B")) {
+        art += "\n";
+      }
     }
 
     return art;
