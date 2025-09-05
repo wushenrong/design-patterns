@@ -19,17 +19,17 @@ public abstract class IceCream {
 
   /** Returns the String representation of the ice cream. */
   public String toString() {
-    String art = "";
+    StringBuilder art = new StringBuilder();
 
     for (String line : asciiArt) {
-      art += line;
+      art.append(line);
 
       // Do not add newlines to color codes which starts with '\u001B'
       if (!line.contains("\u001B")) {
-        art += "\n";
+        art.append("\n");
       }
     }
 
-    return art;
+    return art.toString();
   }
 }
