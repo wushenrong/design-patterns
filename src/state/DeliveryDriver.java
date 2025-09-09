@@ -67,13 +67,13 @@ public class DeliveryDriver {
   /**
    * Pauses the program
    *
-   * @param num The miliseconds to pause the program for
+   * @param num The milliseconds to pause the program for
    */
   public static void sleep(int num) {
     try {
       TimeUnit.MILLISECONDS.sleep(num);
     } catch (Exception e) {
-      System.out.println("Timmer error");
+      System.out.println("Timer error");
     }
   }
 
