@@ -32,11 +32,7 @@ public class Package {
 
   public String getName() {
     if (quantity > 1) {
-      if (name.endsWith("s")) {
-        return name + "es";
-      }
-
-      return name + "s";
+      return name + "'s";
     }
 
     return name;

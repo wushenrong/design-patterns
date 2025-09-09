@@ -10,8 +10,21 @@ public class OrderedState extends State {
 
   @Override
   public String getETA() {
-    // TODO stub
-    return null;
+    String message = "";
+
+    if (random.nextInt(10) < 2) {
+      message +=
+          "The "
+              + pkg.getName()
+              + " "
+              + pkg.getVerb("has", "have")
+              + " experienced a slight delay in manufacturing.\n";
+      days += random.nextInt(3) + 1;
+    }
+
+    message += "The " + pkg.getName() + " will be shipped within " + days + " business days.";
+
+    return message;
   }
 
   @Override

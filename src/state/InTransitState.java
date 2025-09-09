@@ -5,13 +5,26 @@ public class InTransitState extends State {
 
   public InTransitState(Package pkg) {
     super(pkg);
-    this.days = 2;
+    this.days = 5;
   }
 
   @Override
   public String getETA() {
-    // TODO stub
-    return null;
+    String message = "";
+
+    if (random.nextInt(10) < 3) {
+      message +=
+          "The "
+              + pkg.getName()
+              + " "
+              + pkg.getVerb("has", "have")
+              + " experienced a delay in shipping.\n";
+      days += random.nextInt(7) + 1;
+    }
+
+    message += "The " + pkg.getName() + " should arrive within " + days + " business days.";
+
+    return message;
   }
 
   @Override
