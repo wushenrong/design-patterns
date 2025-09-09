@@ -31,11 +31,22 @@ public class Package {
   public void setState(State state) {}
 
   public String getName() {
+    if (quantity > 1) {
+      if (name.endsWith("s")) {
+        return name + "es";
+      }
+
+      return name + "s";
+    }
+
     return name;
   }
 
   public String getVerb(String singular, String plural) {
-    // TODO stub
-    return null;
+    if (quantity > 1) {
+      return plural;
+    }
+
+    return singular;
   }
 }

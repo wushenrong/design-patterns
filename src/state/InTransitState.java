@@ -5,6 +5,7 @@ public class InTransitState extends State {
 
   public InTransitState(Package pkg) {
     super(pkg);
+    this.days = 2;
   }
 
   @Override
@@ -15,7 +16,6 @@ public class InTransitState extends State {
 
   @Override
   public String getStatus() {
-    // TODO stub
-    return null;
+    return "The " + pkg.getName() + " " + pkg.getVerb("is", "are") + " out for delivery.";
   }
 }

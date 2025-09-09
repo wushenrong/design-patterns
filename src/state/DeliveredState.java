@@ -7,13 +7,11 @@ public class DeliveredState extends State {
 
   @Override
   public String getETA() {
-    // TODO stub
-    return null;
+    return "The " + pkg.getName() + " " + pkg.getVerb("has", "have") + " arrived.";
   }
 
   @Override
   public String getStatus() {
-    // TODO stub
-    return null;
+    return "The " + pkg.getName() + " " + pkg.getVerb("is", "are") + " here.";
   }
 }

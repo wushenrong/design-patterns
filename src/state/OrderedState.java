@@ -5,6 +5,7 @@ public class OrderedState extends State {
 
   public OrderedState(Package pkg) {
     super(pkg);
+    this.days = 2;
   }
 
   @Override
@@ -15,7 +16,6 @@ public class OrderedState extends State {
 
   @Override
   public String getStatus() {
-    // TODO stub
-    return null;
+    return "The " + pkg.getName() + " " + pkg.getVerb("has", "have") + " been ordered.";
   }
 }
