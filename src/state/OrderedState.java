@@ -1,8 +1,18 @@
 package state;
 
+/**
+ * A State where a Package has been ordered.
+ *
+ * @author Samuel Wu
+ */
 public class OrderedState extends State {
   private int days;
 
+  /**
+   * Creates a new State in which a Package has been ordered.
+   *
+   * @param pkg The package to order.
+   */
   public OrderedState(Package pkg) {
     super(pkg);
     this.days = 2;

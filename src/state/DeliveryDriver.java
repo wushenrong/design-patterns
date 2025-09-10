@@ -21,7 +21,7 @@ public class DeliveryDriver {
       sleep(5000);
       System.out.println("\nMailing:\n" + item.mail());
       sleep(5000);
-      System.out.println("\nDelivery\n" + item.received());
+      System.out.println("\nDelivery:\n" + item.received());
       sleep(5000);
 
       if (!playAgain()) break;

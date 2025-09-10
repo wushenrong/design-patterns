@@ -1,5 +1,10 @@
 package state;
 
+/**
+ * A Package that a customer can purchase online.
+ *
+ * @author Samuel Wu
+ */
 public class Package {
   private String name;
   private int quantity;
@@ -8,28 +13,63 @@ public class Package {
   private State inTransitState;
   private State deliveredState;
 
+  /**
+   * Creates a new Package with a name and quantity.
+   *
+   * @param name The name of the package.
+   * @param quantity The number of items in the package.
+   */
   public Package(String name, int quantity) {
     this.name = name;
     this.quantity = quantity;
+    this.state = null;
+    this.orderedState = new OrderedState(this);
+    this.inTransitState = new InTransitState(this);
+    this.deliveredState = new DeliveredState(this);
   }
 
+  /**
+   * Ordering the Package.
+   *
+   * @return The status of the package being ordered.
+   */
   public String order() {
-    // TODO stub
-    return null;
+    return performAction(orderedState);
   }
 
+  /**
+   * Mailing the Package.
+   *
+   * @return The status of the package being mailed.
+   */
   public String mail() {
-    // TODO stub
-    return null;
+    return performAction(inTransitState);
   }
 
+  /**
+   * Delivering the Package.
+   *
+   * @return The status of the package being delivered.
+   */
   public String received() {
-    // TODO stub
-    return null;
+    return performAction(deliveredState);
   }
 
-  public void setState(State state) {}
+  /**
+   * Sets the state of the Package.
+   *
+   * @param state The current state of the package.
+   */
+  public void setState(State state) {
+    this.state = state;
+  }
 
+  /**
+   * Returns the name of the package. Becomes plural if there are more than 1 quantity of items in
+   * the Package.
+   *
+   * @return The name of the package.
+   */
   public String getName() {
     if (quantity > 1) {
       return name + "'s";
@@ -38,11 +78,29 @@ public class Package {
     return name;
   }
 
+  /**
+   * Returns the correct verb based on if there are more than 1 quantity of items in the Package
+   *
+   * @param singular The verb in the singular case.
+   * @param plural The verb in the plural case.
+   * @return The verb in correct
+   */
   public String getVerb(String singular, String plural) {
     if (quantity > 1) {
       return plural;
     }
 
     return singular;
+  }
+
+  /**
+   * Performs an action and sets the state of the Package to the action.
+   *
+   * @param action The state of the action to perform.
+   * @return The status of performing the action.
+   */
+  private String performAction(State action) {
+    setState(action);
+    return state.getStatus() + "\n" + state.getETA();
   }
 }

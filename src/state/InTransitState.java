@@ -1,8 +1,18 @@
 package state;
 
+/**
+ * A State where a Package is currently being transported.
+ *
+ * @author Samuel Wu
+ */
 public class InTransitState extends State {
   private int days;
 
+  /**
+   * Creates a new State in which a Package is being transported.
+   *
+   * @param pkg The package to transport.
+   */
   public InTransitState(Package pkg) {
     super(pkg);
     this.days = 5;
