@@ -18,6 +18,7 @@ public abstract class IceCream {
   protected int numScoops;
 
   /** Returns the String representation of the ice cream. */
+  @Override
   public String toString() {
     StringBuilder art = new StringBuilder();
 

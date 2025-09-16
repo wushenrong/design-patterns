@@ -47,5 +47,6 @@ public abstract class Character {
    *
    * @return A string representation of the character.
    */
+  @Override
   public abstract String toString();
 }
