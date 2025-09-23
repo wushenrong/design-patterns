@@ -23,7 +23,8 @@ public class MedievalDriver {
       reader.nextLine();
       character.attack();
 
-      if (!playAgain()) break;
+      if (!playAgain())
+        break;
     }
 
     System.out.println("Goodbye");

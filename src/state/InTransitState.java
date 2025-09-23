@@ -23,12 +23,8 @@ public class InTransitState extends State {
     String message = "";
 
     if (random.nextInt(10) < 3) {
-      message +=
-          "The "
-              + pkg.getName()
-              + " "
-              + pkg.getVerb("has", "have")
-              + " experienced a delay in shipping.\n";
+      message += "The " + pkg.getName() + " " + pkg.getVerb("has", "have")
+          + " experienced a delay in shipping.\n";
       days += random.nextInt(7) + 1;
     }
 

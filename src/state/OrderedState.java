@@ -23,12 +23,8 @@ public class OrderedState extends State {
     String message = "";
 
     if (random.nextInt(10) < 2) {
-      message +=
-          "The "
-              + pkg.getName()
-              + " "
-              + pkg.getVerb("has", "have")
-              + " experienced a slight delay in manufacturing.\n";
+      message += "The " + pkg.getName() + " " + pkg.getVerb("has", "have")
+          + " experienced a slight delay in manufacturing.\n";
       days += random.nextInt(3) + 1;
     }
 

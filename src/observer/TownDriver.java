@@ -30,7 +30,8 @@ public class TownDriver {
         watchman.issueNotice(notice - 2);
       }
 
-      if (!playAgain()) break;
+      if (!playAgain())
+        break;
     }
 
     System.out.println("Goodbye");

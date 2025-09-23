@@ -24,7 +24,8 @@ public class DeliveryDriver {
       System.out.println("\nDelivery:\n" + item.received());
       sleep(5000);
 
-      if (!playAgain()) break;
+      if (!playAgain())
+        break;
     }
   }
 
