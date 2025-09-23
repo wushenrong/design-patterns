@@ -1,0 +1,44 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Strategy Pattern",
+      "request": "launch",
+      "mainClass": "strategy.MedievalDriver"
+    },
+    {
+      "type": "java",
+      "name": "Observer Pattern",
+      "request": "launch",
+      "mainClass": "observer.TownDriver"
+    },
+    {
+      "type": "java",
+      "name": "Decorator Pattern",
+      "request": "launch",
+      "mainClass": "decorator.IceCreamShopDriver"
+    },
+    {
+      "type": "java",
+      "name": "State Pattern",
+      "request": "launch",
+      "mainClass": "state.DeliveryDriver"
+    },
+    {
+      "type": "java",
+      "name": "Singleton Pattern",
+      "request": "launch",
+      "mainClass": "singleton.MusicDriver"
+    },
+    {
+      "type": "java",
+      "name": "Iterator Pattern",
+      "request": "launch",
+      "mainClass": "iterator.SongDriver"
+    }
+  ]
+}
