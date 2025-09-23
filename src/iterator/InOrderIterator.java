@@ -13,13 +13,17 @@ public class InOrderIterator implements Iterator<Song> {
 
   @Override
   public boolean hasNext() {
-    // TODO Auto-generated method stub
-    return false;
+    return position < songs.length && songs[position] != null;
   }
 
   @Override
   public Song next() {
-    // TODO Auto-generated method stub
-    return null;
+    if (!hasNext()) {
+      return null;
+    }
+
+    Song song = songs[position];
+    position++;
+    return song;
   }
 }

@@ -13,16 +13,30 @@ public class Album {
     this.songs = null;
   }
 
-  public boolean addSong(String name, String artist, double length, Genre genre) {
-    return false;
+  public void addSong(String name, String artist, double length, Genre genre) {
+    if (songs == null) {
+      songs = new Song[1];
+    }
+
+    if (count >= songs.length) {
+      Song[] temp = songs;
+      songs = new Song[songs.length * 2];
+
+      for (int i = 0; i < temp.length; i++) {
+        songs[i] = temp[i];
+      }
+    }
+
+    songs[count] = new Song(name, artist, length, genre);
+    count++;
   }
 
   public Iterator<Song> createInOrderIterator() {
-    return null;
+    return new InOrderIterator(songs);
   }
 
   public Iterator<Song> createShuffleIterator() {
-    return null;
+    return new ShuffleIterator(songs);
   }
 
   public String getName() {

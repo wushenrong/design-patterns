@@ -1,5 +1,8 @@
 package iterator;
 
+/**
+ * A Song by an artist
+ */
 public class Song {
   private String name;
   private String artist;
@@ -15,6 +18,6 @@ public class Song {
 
   @Override
   public String toString() {
-    return "Song [name=" + name + ", artist=" + artist + ", length=" + length + ", genre=" + genre + "]";
+    return name + " by " + artist + ", Genre: " + genre + ", Duration: " + length + "mins";
   }
 }
