@@ -1,5 +1,6 @@
 package iterator;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -18,7 +19,7 @@ public class ShuffleIterator implements Iterator<Song> {
    * @param songs The list of songs to play randomly.
    */
   public ShuffleIterator(Song[] songs) {
-    this.songs = songs;
+    this.songs = songs.clone();
     this.random = new Random();
   }
 
