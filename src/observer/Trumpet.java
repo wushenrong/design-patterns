@@ -14,16 +14,16 @@ public class Trumpet {
   }
 
   private static void honk(boolean warning) {
-    String fileName = "bin/observer/sounds/";
+    StringBuilder fileName = new StringBuilder("bin/observer/sounds/");
 
     if (warning) {
-      fileName += "trumpet.wav";
+      fileName.append("trumpet.wav");
     } else {
-      fileName += "fanfare.wav";
+      fileName.append("fanfare.wav");
     }
 
     try {
-      File soundFile = new File(fileName);
+      File soundFile = new File(fileName.toString());
 
       if (!soundFile.exists()) {
         System.out.println("File does not exist!");

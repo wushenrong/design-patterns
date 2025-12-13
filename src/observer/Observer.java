@@ -12,5 +12,5 @@ public interface Observer {
    * @param warning Is the notice a warning?
    * @param note The level of the notice.
    */
-  public void update(boolean warning, int note);
+  void update(boolean warning, int note);
 }

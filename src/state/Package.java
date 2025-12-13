@@ -22,46 +22,10 @@ public class Package {
   public Package(String name, int quantity) {
     this.name = name;
     this.quantity = quantity;
-    this.state = null;
-    this.orderedState = new OrderedState(this);
-    this.inTransitState = new InTransitState(this);
-    this.deliveredState = new DeliveredState(this);
-  }
-
-  /**
-   * Ordering the Package.
-   *
-   * @return The status of the package being ordered.
-   */
-  public String order() {
-    return performAction(orderedState);
-  }
-
-  /**
-   * Mailing the Package.
-   *
-   * @return The status of the package being mailed.
-   */
-  public String mail() {
-    return performAction(inTransitState);
-  }
-
-  /**
-   * Delivering the Package.
-   *
-   * @return The status of the package being delivered.
-   */
-  public String received() {
-    return performAction(deliveredState);
-  }
-
-  /**
-   * Sets the state of the Package.
-   *
-   * @param state The current state of the package.
-   */
-  public void setState(State state) {
-    this.state = state;
+    state = null;
+    orderedState = new OrderedState(this);
+    inTransitState = new InTransitState(this);
+    deliveredState = new DeliveredState(this);
   }
 
   /**
@@ -91,6 +55,42 @@ public class Package {
     }
 
     return singular;
+  }
+
+  /**
+   * Mailing the Package.
+   *
+   * @return The status of the package being mailed.
+   */
+  public String mail() {
+    return performAction(inTransitState);
+  }
+
+  /**
+   * Ordering the Package.
+   *
+   * @return The status of the package being ordered.
+   */
+  public String order() {
+    return performAction(orderedState);
+  }
+
+  /**
+   * Delivering the Package.
+   *
+   * @return The status of the package being delivered.
+   */
+  public String received() {
+    return performAction(deliveredState);
+  }
+
+  /**
+   * Sets the state of the Package.
+   *
+   * @param state The current state of the package.
+   */
+  public void setState(State state) {
+    this.state = state;
   }
 
   /**

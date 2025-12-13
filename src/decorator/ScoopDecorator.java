@@ -27,11 +27,11 @@ public abstract class ScoopDecorator extends IceCream {
    * @param flavor The ice cream coloring of the flavor of the scoop.
    */
   protected void createAsciiArt(String flavor) {
-    this.asciiArt = new ArrayList<String>();
-    this.asciiArt.add(flavor);
+    asciiArt = new ArrayList<>();
+    asciiArt.add(flavor);
 
-    for (int i = numScoops - this.iceCream.numScoops; i > 0; i--) {
-      int currentScoop = this.iceCream.numScoops + i;
+    for (int i = numScoops - iceCream.numScoops; i > 0; i--) {
+      int currentScoop = iceCream.numScoops + i;
       String scoop = "(";
 
       // Account for off by one
@@ -40,10 +40,10 @@ public abstract class ScoopDecorator extends IceCream {
       scoop += "-".repeat((6 - currentScoop) * 2);
       scoop += ")";
 
-      this.asciiArt.add(scoop);
+      asciiArt.add(scoop);
     }
 
-    this.asciiArt.add(ANSI_RESET);
-    this.asciiArt.addAll(this.iceCream.asciiArt);
+    asciiArt.add(ANSI_RESET);
+    asciiArt.addAll(iceCream.asciiArt);
   }
 }

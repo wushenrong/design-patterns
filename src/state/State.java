@@ -18,15 +18,8 @@ public abstract class State {
    */
   public State(Package pkg) {
     this.pkg = pkg;
-    this.random = new Random();
+    random = new Random();
   }
-
-  /**
-   * Gets the current status of a Package.
-   *
-   * @return The current status of the Package purchased online.
-   */
-  public abstract String getStatus();
 
   /**
    * Calculates the estimated time for a Package to complete its current status.
@@ -34,4 +27,11 @@ public abstract class State {
    * @return The estimated time for the package to complete its current status.
    */
   public abstract String getETA();
+
+  /**
+   * Gets the current status of a Package.
+   *
+   * @return The current status of the Package purchased online.
+   */
+  public abstract String getStatus();
 }

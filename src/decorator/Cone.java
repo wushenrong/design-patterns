@@ -8,9 +8,9 @@ package decorator;
 public class Cone extends IceCream {
   /** Creates a new Cone for scoops of ice cream to be put on top of. */
   public Cone() {
-    this.numScoops = 0;
-    this.asciiArt = FileReader.getLines("bin/decorator/txt/cone.txt");
-    this.asciiArt.add(0, ANSI_BROWN);
-    this.asciiArt.add(ANSI_RESET);
+    numScoops = 0;
+    asciiArt = FileReader.getLines("bin/decorator/txt/cone.txt");
+    asciiArt.add(0, ANSI_BROWN);
+    asciiArt.add(ANSI_RESET);
   }
 }

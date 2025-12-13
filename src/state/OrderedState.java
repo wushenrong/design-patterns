@@ -15,22 +15,23 @@ public class OrderedState extends State {
    */
   public OrderedState(Package pkg) {
     super(pkg);
-    this.days = 2;
+    days = 2;
   }
 
   @Override
   public String getETA() {
-    String message = "";
+    StringBuilder message = new StringBuilder();
 
     if (random.nextInt(10) < 2) {
-      message += "The " + pkg.getName() + " " + pkg.getVerb("has", "have")
-          + " experienced a slight delay in manufacturing.\n";
+      message.append("The ").append(pkg.getName()).append(" ").append(pkg.getVerb("has", "have"))
+          .append(" experienced a slight delay in manufacturing.\n");
       days += random.nextInt(3) + 1;
     }
 
-    message += "The " + pkg.getName() + " will be shipped within " + days + " business days.";
+    message.append("The ").append(pkg.getName()).append(" will be shipped within ").append(days)
+        .append(" business days.");
 
-    return message;
+    return message.toString();
   }
 
   @Override

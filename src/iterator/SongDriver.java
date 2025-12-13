@@ -1,28 +1,24 @@
 package iterator;
 
-import java.util.Scanner;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class SongDriver {
+  /**
+   * Clears the console
+   */
+  public static void clear() {
+    System.out.print("\033[H\033[2J");
+  }
+
+  public static void main(String[] args) {
+    new SongDriver().run();
+  }
+
   private Scanner reader;
 
   public SongDriver() {
     reader = new Scanner(System.in);
-  }
-
-  public void run() {
-    clear();
-    System.out.println("*** Welcome to our Album Player ***");
-    Album album = makeAlbum();
-    Iterator<Song> albumIterator = getAlbumIterator(album);
-    int counter = 1;
-
-    clear();
-    System.out.println("Album: " + album.getName());
-    while (albumIterator.hasNext()) {
-      System.out.println(counter + ". " + albumIterator.next());
-      counter++;
-    }
   }
 
   public Iterator<Song> getAlbumIterator(Album album) {
@@ -35,12 +31,12 @@ public class SongDriver {
 
       if (choice == 1) {
         return album.createInOrderIterator();
-      } else if (choice == 2) {
-        return album.createShuffleIterator();
-      } else {
-        System.out.println("Not a valid choice");
-        continue;
       }
+      if (choice == 2) {
+        return album.createShuffleIterator();
+      }
+      System.out.println("Not a valid choice");
+      continue;
     }
   }
 
@@ -62,14 +58,18 @@ public class SongDriver {
     return album;
   }
 
-  /**
-   * Clears the console
-   */
-  public static void clear() {
-    System.out.print("\033[H\033[2J");
-  }
+  public void run() {
+    clear();
+    System.out.println("*** Welcome to our Album Player ***");
+    Album album = makeAlbum();
+    Iterator<Song> albumIterator = getAlbumIterator(album);
+    int counter = 1;
 
-  public static void main(String[] args) {
-    (new SongDriver()).run();
+    clear();
+    System.out.println("Album: " + album.getName());
+    while (albumIterator.hasNext()) {
+      System.out.println(counter + ". " + albumIterator.next());
+      counter++;
+    }
   }
 }

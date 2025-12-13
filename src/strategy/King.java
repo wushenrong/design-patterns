@@ -22,6 +22,6 @@ public class King extends Character {
    */
   @Override
   public String toString() {
-    return "|^K^|\nKing: " + this.name;
+    return "|^K^|\nKing: " + name;
   }
 }

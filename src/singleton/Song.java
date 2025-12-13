@@ -23,14 +23,14 @@ public class Song {
     this.filePath = filePath;
   }
 
+  /** Play the song. */
+  public void play() {
+    SongPlayer.play(filePath);
+  }
+
   /** Returns the string representation of the song. */
   @Override
   public String toString() {
     return title + " by " + artist;
-  }
-
-  /** Play the song. */
-  public void play() {
-    SongPlayer.play(filePath);
   }
 }

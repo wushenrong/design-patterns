@@ -18,7 +18,7 @@ public class InOrderIterator implements Iterator<Song> {
    */
   public InOrderIterator(Song[] songs) {
     this.songs = songs;
-    this.position = 0;
+    position = 0;
   }
 
   /**

@@ -19,7 +19,7 @@ public class ShuffleIterator implements Iterator<Song> {
    */
   public ShuffleIterator(Song[] songs) {
     this.songs = songs.clone();
-    this.random = new Random();
+    random = new Random();
   }
 
   /**

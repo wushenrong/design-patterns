@@ -12,8 +12,22 @@ public abstract class Subject {
 
   /** Creates a new Subject with a empty list of registered observers. */
   public Subject() {
-    observers = new ArrayList<Observer>();
+    observers = new ArrayList<>();
   }
+
+  /**
+   * Issues a notice and play trumpets.
+   *
+   * @param note The level of the notice.
+   */
+  public abstract void issueNotice(int note);
+
+  /**
+   * Notify all of its registered observers that a notice has been issued.
+   *
+   * @param note The level of the notice.
+   */
+  public abstract void notifyObservers(int note);
 
   /**
    * Adds a Observer to the list of registered observers.
@@ -32,20 +46,6 @@ public abstract class Subject {
   public void removeObserver(Observer observer) {
     observers.remove(observer);
   }
-
-  /**
-   * Issues a notice and play trumpets.
-   *
-   * @param note The level of the notice.
-   */
-  public abstract void issueNotice(int note);
-
-  /**
-   * Notify all of its registered observers that a notice has been issued.
-   *
-   * @param note The level of the notice.
-   */
-  public abstract void notifyObservers(int note);
 
   /**
    * Helper method to print out the notice and trumpets to play horns or fanfare.

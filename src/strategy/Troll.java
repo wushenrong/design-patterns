@@ -22,6 +22,6 @@ public class Troll extends Character {
    */
   @Override
   public String toString() {
-    return "^T^\nTroll: " + this.name;
+    return "^T^\nTroll: " + name;
   }
 }

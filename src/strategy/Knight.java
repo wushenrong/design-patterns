@@ -22,6 +22,6 @@ public class Knight extends Character {
    */
   @Override
   public String toString() {
-    return "K-|\nKnight: " + this.name;
+    return "K-|\nKnight: " + name;
   }
 }

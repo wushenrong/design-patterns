@@ -6,27 +6,33 @@ import java.util.concurrent.TimeUnit;
 public class DeliveryDriver {
   private static final String YES = "y";
   private static final String NO = "n";
+
+  /** Clears the console */
+  public static void clear() {
+    System.out.print("\033[H\033[2J");
+  }
+
+  public static void main(String[] args) {
+    new DeliveryDriver().run();
+  }
+
+  /**
+   * Pauses the program
+   *
+   * @param num The milliseconds to pause the program for
+   */
+  public static void sleep(int num) {
+    try {
+      TimeUnit.MILLISECONDS.sleep(num);
+    } catch (Exception e) {
+      System.out.println("Timer error");
+    }
+  }
+
   private Scanner reader;
 
   public DeliveryDriver() {
     reader = new Scanner(System.in);
-  }
-
-  public void run() {
-    while (true) {
-      clear();
-      System.out.print("What would you like to order: ");
-      Package item = new Package(reader.nextLine(), getNumItem());
-      System.out.println("\nOrdering:\n" + item.order());
-      sleep(5000);
-      System.out.println("\nMailing:\n" + item.mail());
-      sleep(5000);
-      System.out.println("\nDelivery:\n" + item.received());
-      sleep(5000);
-
-      if (!playAgain())
-        break;
-    }
   }
 
   public int getNumItem() {
@@ -44,6 +50,24 @@ public class DeliveryDriver {
     }
   }
 
+  public void run() {
+    while (true) {
+      clear();
+      System.out.print("What would you like to order: ");
+      Package item = new Package(reader.nextLine(), getNumItem());
+      System.out.println("\nOrdering:\n" + item.order());
+      sleep(5000);
+      System.out.println("\nMailing:\n" + item.mail());
+      sleep(5000);
+      System.out.println("\nDelivery:\n" + item.received());
+      sleep(5000);
+
+      if (!playAgain()) {
+        break;
+      }
+    }
+  }
+
   /**
    * Asks the user if they would like to continue If they enter yes, it returns true, otherwise it
    * returns false
@@ -57,33 +81,12 @@ public class DeliveryDriver {
 
       if (command.equals(YES)) {
         return true;
-      } else if (command.equals(NO)) {
+      }
+      if (command.equals(NO)) {
         return false;
       } else {
         System.out.println("Sorry, that's not a valid command");
       }
     }
-  }
-
-  /**
-   * Pauses the program
-   *
-   * @param num The milliseconds to pause the program for
-   */
-  public static void sleep(int num) {
-    try {
-      TimeUnit.MILLISECONDS.sleep(num);
-    } catch (Exception e) {
-      System.out.println("Timer error");
-    }
-  }
-
-  /** Clears the console */
-  public static void clear() {
-    System.out.print("\033[H\033[2J");
-  }
-
-  public static void main(String[] args) {
-    (new DeliveryDriver()).run();
   }
 }

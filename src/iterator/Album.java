@@ -19,8 +19,8 @@ public class Album {
    */
   public Album(String name) {
     this.name = name;
-    this.count = 0;
-    this.songs = null;
+    count = 0;
+    songs = null;
   }
 
   /**

@@ -15,22 +15,23 @@ public class InTransitState extends State {
    */
   public InTransitState(Package pkg) {
     super(pkg);
-    this.days = 5;
+    days = 5;
   }
 
   @Override
   public String getETA() {
-    String message = "";
+    StringBuilder message = new StringBuilder();
 
     if (random.nextInt(10) < 3) {
-      message += "The " + pkg.getName() + " " + pkg.getVerb("has", "have")
-          + " experienced a delay in shipping.\n";
+      message.append("The ").append(pkg.getName()).append(" ").append(pkg.getVerb("has", "have"))
+          .append(" experienced a delay in shipping.\n");
       days += random.nextInt(7) + 1;
     }
 
-    message += "The " + pkg.getName() + " should arrive within " + days + " business days.";
+    message.append("The ").append(pkg.getName()).append(" should arrive within ").append(days)
+        .append(" business days.");
 
-    return message;
+    return message.toString();
   }
 
   @Override

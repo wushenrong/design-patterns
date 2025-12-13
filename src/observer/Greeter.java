@@ -6,16 +6,16 @@ package observer;
  * @author Samuel Wu
  */
 public class Greeter extends Subject {
+  /** Issues a general notice to its observers and plays fanfare. */
+  @Override
+  public void issueNotice(int note) {
+    playTrumpets("Greeting with fanfare.", false, note);
+  }
+
   @Override
   public void notifyObservers(int note) {
     for (Observer observer : observers) {
       observer.update(false, note);
     }
-  }
-
-  /** Issues a general notice to its observers and plays fanfare. */
-  @Override
-  public void issueNotice(int note) {
-    playTrumpets("Greeting with fanfare.", false, note);
   }
 }

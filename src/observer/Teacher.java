@@ -27,12 +27,10 @@ public class Teacher implements Observer {
       } else if (note == 2) {
         System.out.println("Evacuating all the children!");
       }
-    } else {
-      if (note == 1) {
-        System.out.println("Keeping kids from being distracted.");
-      } else if (note == 2) {
-        System.out.println("Keeping children away from Royalty.");
-      }
+    } else if (note == 1) {
+      System.out.println("Keeping kids from being distracted.");
+    } else if (note == 2) {
+      System.out.println("Keeping children away from Royalty.");
     }
   }
 }

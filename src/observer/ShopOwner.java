@@ -27,12 +27,10 @@ public class ShopOwner implements Observer {
       } else if (note == 2) {
         System.out.println("Running away from the shop!");
       }
-    } else {
-      if (note == 1) {
-        System.out.println("Continue to sell produce.");
-      } else if (note == 2) {
-        System.out.println("Greeting the Royal family.");
-      }
+    } else if (note == 1) {
+      System.out.println("Continue to sell produce.");
+    } else if (note == 2) {
+      System.out.println("Greeting the Royal family.");
     }
   }
 }

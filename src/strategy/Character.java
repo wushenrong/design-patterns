@@ -19,7 +19,7 @@ public abstract class Character {
    */
   public Character(String name) {
     this.name = name;
-    this.weaponBehavior = null;
+    weaponBehavior = null;
   }
 
   /**

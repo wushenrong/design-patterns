@@ -3,6 +3,11 @@ package strategy;
 import java.util.concurrent.TimeUnit;
 
 public class Resources {
+  /** Clears the console */
+  public static void clear() {
+    System.out.print("\033[H\033[2J");
+  }
+
   /**
    * Pauses the program
    *
@@ -14,10 +19,5 @@ public class Resources {
     } catch (Exception e) {
       System.out.println("Timer error");
     }
-  }
-
-  /** Clears the console */
-  public static void clear() {
-    System.out.print("\033[H\033[2J");
   }
 }

@@ -3,38 +3,21 @@ package observer;
 import java.util.Scanner;
 
 public class TownDriver {
-  private Scanner reader;
   private static final String YES = "y";
   private static final String NO = "n";
 
-  public TownDriver() {
-    reader = new Scanner(System.in);
+  public static void clear() {
+    System.out.print("\033[H\033[2J");
   }
 
-  public void run() {
-    clear();
-    System.out.println("A Happy Little City");
-    Watchman watchman = new Watchman();
-    Greeter greeter = new Greeter();
-    Observer shopOwner = new ShopOwner(watchman, greeter);
-    Observer teacher = new Teacher(watchman, greeter);
-    Observer knight = new Knight(watchman, greeter);
+  public static void main(String[] args) {
+    new TownDriver().run();
+  }
 
-    while (true) {
-      int notice = getNotice();
-      clear();
+  private Scanner reader;
 
-      if (notice <= 2) {
-        greeter.issueNotice(notice);
-      } else {
-        watchman.issueNotice(notice - 2);
-      }
-
-      if (!playAgain())
-        break;
-    }
-
-    System.out.println("Goodbye");
+  public TownDriver() {
+    reader = new Scanner(System.in);
   }
 
   public int getNotice() {
@@ -56,8 +39,31 @@ public class TownDriver {
     }
   }
 
-  public static void clear() {
-    System.out.print("\033[H\033[2J");
+  public void run() {
+    clear();
+    System.out.println("A Happy Little City");
+    Watchman watchman = new Watchman();
+    Greeter greeter = new Greeter();
+    new ShopOwner(watchman, greeter);
+    new Teacher(watchman, greeter);
+    new Knight(watchman, greeter);
+
+    while (true) {
+      int notice = getNotice();
+      clear();
+
+      if (notice <= 2) {
+        greeter.issueNotice(notice);
+      } else {
+        watchman.issueNotice(notice - 2);
+      }
+
+      if (!playAgain()) {
+        break;
+      }
+    }
+
+    System.out.println("Goodbye");
   }
 
   private boolean playAgain() {
@@ -67,15 +73,11 @@ public class TownDriver {
 
       if (command.equals(YES)) {
         return true;
-      } else if (command.equals(NO)) {
-        return false;
-      } else {
-        System.out.println("Sorry, that's not a valid command");
       }
+      if (command.equals(NO)) {
+        return false;
+      }
+      System.out.println("Sorry, that's not a valid command");
     }
-  }
-
-  public static void main(String[] args) {
-    (new TownDriver()).run();
   }
 }

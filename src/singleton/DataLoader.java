@@ -20,7 +20,7 @@ public class DataLoader {
    * @return A list of songs.
    */
   public static ArrayList<Song> getSongs() {
-    ArrayList<Song> songs = new ArrayList<Song>();
+    ArrayList<Song> songs = new ArrayList<>();
 
     try {
       File songListFile = new File(SONG_LIST);

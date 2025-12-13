@@ -6,11 +6,11 @@ package strategy;
  * @author Samuel Wu
  */
 public abstract class WeaponBehavior {
+  protected static final int NUMBER_OF_COLUMNS = 80;
+
+  protected static final int SECOND_IN_MILLISECONDS = 100;
   /** The speed of the weapon, in columns per second. */
   protected int speed = 2;
-
-  protected static final int NUMBER_OF_COLUMNS = 80;
-  protected static final int SECOND_IN_MILLISECONDS = 100;
 
   /** The weapon's method of attack. */
   public abstract void attack();
@@ -32,7 +32,7 @@ public abstract class WeaponBehavior {
 
       System.out.print(filler.repeat(i) + projectile);
 
-      Resources.sleep(SECOND_IN_MILLISECONDS / this.speed);
+      Resources.sleep(SECOND_IN_MILLISECONDS / speed);
     }
 
     System.out.println();

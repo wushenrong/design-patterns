@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class FileReader {
   public static ArrayList<String> getLines(String fileName) {
-    ArrayList<String> lines = new ArrayList<String>();
+    ArrayList<String> lines = new ArrayList<>();
 
     try {
       File file = new File(fileName);

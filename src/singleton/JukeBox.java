@@ -9,12 +9,6 @@ import java.util.ArrayList;
  */
 public class JukeBox {
   private static JukeBox jukeBox;
-  private ArrayList<Song> songs;
-
-  /** Creates a new JukeBox. */
-  private JukeBox() {
-    this.songs = DataLoader.getSongs();
-  }
 
   /**
    * Gets the singular instance of the JukeBox. If there is no JukeBox, then create and return a new
@@ -28,6 +22,13 @@ public class JukeBox {
     }
 
     return jukeBox;
+  }
+
+  private ArrayList<Song> songs;
+
+  /** Creates a new JukeBox. */
+  private JukeBox() {
+    songs = DataLoader.getSongs();
   }
 
   /**
